@@ -1,8 +1,8 @@
-#include <stdio.h> //biblioteca de comunica√ß√£o com o usu√°rio
+#include <stdio.h> //biblioteca de comunicaÁ„o com o usu·rio
 
-#include <stdlib.h> //biblioteca de aloca√ß√£o de espa√ßo em mem√≥ria
+#include <stdlib.h> //biblioteca de alocaÁ„o de espaÁo em memÛria
 
-#include <locale.h> //biblioteca de aloca√ß√µes de texto por regi√£o
+#include <locale.h> //biblioteca de alocaÁıes de texto por regi„o
 
 #include <string.h> // biblioteca de conjunto de caracteres (strings)
 
@@ -13,7 +13,7 @@ int registrar()
 
 setlocale(LC_ALL, "Portuguese");//Referencia de biblioteca
 
-    char arquivo[100];//Variav√©is
+    char arquivo[100];//VariavÈis
     char nome[40];
     char sobrenome[40];
     char cpf[40];
@@ -67,7 +67,7 @@ setlocale(LC_ALL, "Portuguese");//Referencia de biblioteca
     fprintf(file, ",");
     fclose(file);
 
-    printf("Verifique se seus dados est√£o corretos\n\nDigite 'yes' para 'dados corretos'\n\nDigite 'no' para preencher os dados novamente: ");
+    printf("Verifique se seus dados est„o corretos\n\nDigite 'yes' para 'dados corretos'\n\nDigite 'no' para preencher os dados novamente: ");
     scanf("%s", choice);//Fim do cadastro
 
     if (strcmp(choice, "yes") == 0) {
@@ -75,16 +75,18 @@ setlocale(LC_ALL, "Portuguese");//Referencia de biblioteca
     } 
 	else if (strcmp(choice, "no") == 0) 
 	{
-        printf("Seus dados n√£o foram salvos no sistema!\n\n");
+        printf("Seus dados n„o foram salvos no sistema!\n\n");
 
         if (remove(arquivo) == 0) {
-            printf("Arquivo exclu√≠do com sucesso.\n");
+            printf("Arquivo excluÌdo com sucesso.\n");
         } else {
             printf("Erro ao excluir o arquivo.\n");
         }
     }
+    
+}
 
-    return 0;
+
 
 int consultar()
 {
@@ -105,12 +107,12 @@ setlocale (LC_ALL, "Portuguese");//Referencia de biblioteca
 	
 	if (file == NULL)
 	{
-		printf("N√£o foi poss√≠vel encontrar o CPF digitado, n√£o localizado no sistema!\n\n");
+		printf("N„o foi possÌvel encontrar o CPF digitado, n„o localizado no sistema!\n\n");
 	}
 	
 	while (fgets (conteudo, 200, file) != NULL)
 	{
-		printf("\nEstas s√£o as informa√ß√µes sobre o usuario cadastrado: \n\n");
+		printf("\nEstas s„o as informaÁıes sobre o usuario cadastrado: \n\n");
 		
 		token = strtok(conteudo, ",");
 		printf("CPF: %s\n", token);
@@ -137,7 +139,7 @@ int deletar()
 	char choice[10];
 	
 	
-	printf("Digite o CPF do usu√°rio a ser deletado: ");//Inicio do "Deletar"
+	printf("Digite o CPF do usu·rio a ser deletado: ");//Inicio do "Deletar"
     scanf("%s", cpf);
     
 	FILE *file;
@@ -145,16 +147,16 @@ int deletar()
     remove (cpf);
 
     if (file == NULL) {
-        printf("O usu√°rio n√£o foi encontrado.\n\n");
+        printf("O usu·rio n„o foi encontrado.\n\n");
         system("pause");
     } else {
         fclose(file);
         
         if (remove(cpf) == 0) {
-            printf("O usu√°rio foi deletado.\n\n");
+            printf("O usu·rio foi deletado.\n\n");
             system("pause");
         } else {
-            printf("Erro ao deletar o usu√°rio.\n\n");
+            printf("Erro ao deletar o usu·rio.\n\n");
             system("pause");
         }
         
@@ -176,17 +178,17 @@ int main ()
 
 
     	printf ("### CARTORIO DA EBAC ###\n\n");//Inicio do menu
-    	printf ("Escolha a op√ß√£o desejada\n\n");
+    	printf ("Escolha a opÁ„o desejada\n\n");
     	printf ("\t1-Registrar nomes\n");
     	printf ("\t2-Consultar nomes\n");
         printf ("\t3-Deletar nomes\n\n");
-    	printf ("Op√ß√£o:" );// Fim do menu
+    	printf ("OpÁ„o:" );// Fim do menu
 
         scanf("%d", &opcao);
     
         system ("cls");
     
-        switch (opcao) //inicio da sele√ß√£o
+        switch (opcao) //inicio da seleÁ„o
     	{
     	case 1: 
     	registrar();
@@ -201,9 +203,9 @@ int main ()
 		break;
 		
        	 default: 
-    	    printf("Esta op√ß√£o n√£o est√° dispon√≠vel para o usu√°rio!\n");
+    	    printf("Esta opÁ„o n„o est· disponÌvel para o usu·rio!\n");
             system ("pause");	
         break;
-        } //Fim da sele√ß√£o
+        } //Fim da seleÁ„o
     }
 } 

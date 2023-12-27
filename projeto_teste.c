@@ -204,8 +204,8 @@ int main ()
 	break;
 
 	case 4:
-		printf ("Saindo...");
-		return 0;
+	printf ("Saindo...");
+	return 0;
 	break;
 		
        	 default: 

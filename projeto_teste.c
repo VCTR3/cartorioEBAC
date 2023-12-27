@@ -181,8 +181,8 @@ int main ()
     	printf ("Escolha a opção desejada\n\n");
     	printf ("\t1-Registrar nomes\n");
     	printf ("\t2-Consultar nomes\n");
-        printf ("\t3-Deletar nomes\n\n");
-	    printf ("\t4-Sair\n\n");
+        printf ("\t3-Deletar nomes\n");
+	    printf ("\t4-Sair\n");
     	printf ("Opção:" );// Fim do menu
 
         scanf("%d", &opcao);
